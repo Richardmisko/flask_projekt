@@ -2,25 +2,25 @@
 <html lang="en">
 
     <head>
-        <title> Welcome to Markdown blog </title>
+        <title> {% block title %} {% endblock %}  </title>
         <link rel="stylesheet" type="text/css" href={{url_for("static", filename="css/main.css")}}>
     </head>
 
     <body>
         <header>
-            <h1> Severin Murcina </h1>
+            <h1><a href="{{ url_for('view_welcome_page') }}">Severin Murcina</a> </h1>
         </header>
 
         <nav>
             <ul class=nav>
-              <li> <a href="#">About</a> </li>
-              <li> <a href="#">Articles</a> </li>
-              <li> <a href="#">Admin</a> </li>
+              <li> <a href="{{ url_for("view_about") }}">About</a> </li>
+              <li> <a href="{{ url_for("view_articles") }}">Articles</a></li>
+              <li> <a href="{{ url_for("view_admin")}}">Admin</a> </li>
             </ul>
         </nav>
 
         <main>
-            {{ text }}
+            {% block main %} {% endblock %}
 
         </main>
         
