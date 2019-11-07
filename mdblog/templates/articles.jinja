@@ -1,7 +1,18 @@
 {% extends '_main.jinja' %}
 
-{% block title %} articles {% endblock %}
+{% block title %} Articles {% endblock %}
 
 {% block main %}
-    Here should be articles
+    {% if articles %}
+    	<ul>
+    		{% for id, article in articles %}
+    			<li>
+    				<h2> {{article.title}} </h2>
+    				<p>  {{article.content}} </p>
+    			</li>
+    		{% endfor %}
+    	</ul>
+    {% else %}
+    	<p> No articles :( </p>
+    {% endif %}
 {% endblock %}
