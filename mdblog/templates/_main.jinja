@@ -3,15 +3,15 @@
 
     <head>
         <title> {% block title %} {% endblock %}  </title>
-        {% include "_head.jinja" %}
+          
 
     </head>
-
     <body>
         <header>
             <h1><a href="{{ url_for('view_welcome_page') }}">Severin Murcina</a> </h1>
         </header>
-
+     
+     
         <nav>
             {% include "_nav.jinja" %}
         </nav>
@@ -23,6 +23,7 @@
         
         <footer>
             {% include "_footer.jinja" %}
+            <p>% include "_head.jinja" %</p>
         </footer>
     </body>
 </html>

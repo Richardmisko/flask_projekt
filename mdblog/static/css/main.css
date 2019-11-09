@@ -1,10 +1,13 @@
 body {
     padding: 0 20%;
+    color: red;
+
 }
 
 header {
     text-align: center;
 }
+
 
 .nav {
     padding: 0;
@@ -14,15 +17,21 @@ header {
 }
 
 .nav li {
-    display: inline;
+    display: inline-block;
 }
 
 
 .nav a {
     display: inline-block;
     padding: 10px;
-    text-decoration: none;
+    text-decoration: none; 
 }
+
+.nav form {
+    display: inline-block;
+}
+	
+
 
 footer {
     text-align: center;
