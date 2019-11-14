@@ -3,7 +3,11 @@
 {% block title %} Articles {% endblock %}
 
 
-{% block main %}       
+{% block main %}
+    {% if "logged" in session %}        
+        <a href="{{ url_for("view_add_article") }}">add new article</a>
+    }
+    {% endif %}
     {% if articles %}
         <ul>
         {% for article in articles %}
@@ -18,5 +22,7 @@
     {% endif %}
 {% endblock %}
 
+
 {# tvorba for loop v jinja vid 205, cca 6:30 #}
 {# truncate(cislo) - funcia, ktora zobrazi iba prvich (cislo) znakov #}
+{# vid 210, 9:18  , aktualizacia 7, riadok #}
