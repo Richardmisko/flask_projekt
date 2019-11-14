@@ -1,29 +1,35 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <title> {% block title %} {% endblock %}  </title>
-          
+<head>
+    <title> {% block title %} {% endblock %} </title>
+    {% include "_head.jinja" %}
+</head>
+{# flash spravy, vid 209 #}
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+            <li class="{{ category }}"> {{ message }} </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+			
+			
 
-    </head>
-    <body>
-        <header>
-            <h1><a href="{{ url_for('view_welcome_page') }}">Severin Murcina</a> </h1>
-        </header>
-     
-     
-        <nav>
-            {% include "_nav.jinja" %}
-        </nav>
+<body>
 
-        <main>
-            {% block main %} {% endblock %}
+<header>
+    <h1> <a href="{{ url_for("view_welcome_page") }}"> Severin Murcina </a></h1>
+</header>
 
-        </main>
-        
-        <footer>
-            {% include "_footer.jinja" %}
-            <p>% include "_head.jinja" %</p>
-        </footer>
-    </body>
+{% include "_nav.jinja" %}
+
+<main>
+    {% block main %} {% endblock %}
+</main>
+
+{% include "_footer.jinja" %}
+</body>
 </html>

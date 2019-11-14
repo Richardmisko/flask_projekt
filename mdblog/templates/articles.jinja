@@ -1,19 +1,22 @@
-
-{% extends '_main.jinja' %}
+{% extends "_main.jinja" %}
 
 {% block title %} Articles {% endblock %}
 
-{% block main %}
+
+{% block main %}       
     {% if articles %}
-    	<ul>
-    		{% for id, article in articles %}
-    			<li>
-    				<h2> {{article.title}} </h2>
-    				<p>  {{article.content}} </p>
-    			</li>
-    		{% endfor %}
-    	</ul>
+        <ul>
+        {% for article in articles %}
+            <li>
+                <h2><a href="{{ url_for("view_article", art_id=article.id) }}"> {{ article.title }} </a></h2>
+                <p> {{ article.content | truncate(100) }} </p>
+            </li>
+        {% endfor %}
+        </ul>
     {% else %}
-    	<p> No articles :( </p>
+        <p> No Articles :( </p>
     {% endif %}
 {% endblock %}
+
+{# tvorba for loop v jinja vid 205, cca 6:30 #}
+{# truncate(cislo) - funcia, ktora zobrazi iba prvich (cislo) znakov #}

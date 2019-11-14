@@ -1,14 +1,16 @@
 <nav>
-	<ul class="nav">
-	    <li> <a href="{{ url_for("view_about") }}">About</a> </li>
-	    <li> <a href="{{ url_for("view_articles") }}">Articles</a></li>
-	    <li> <a href="{{ url_for("view_admin")}}">Admin</a> </li>
-	    {% if 'logged' in session %}
-	    	<li>
-	    		<form action="{{ url_for('logout_user') }}" method = "post">
-	    			<input type = 'submit' value='logout'>
-	    		</form>
-	    	</li>
-	    {% endif %}
-	</ul>
+    <ul class=nav>
+      <li> <a href="{{ url_for("view_about") }}">About</a> </li>
+      <li> <a href="{{ url_for("view_articles") }}">Articles</a> </li>
+      <li> <a href="{{ url_for("view_admin") }}">Admin</a> </li>
+      {% if "logged" in session %}
+        <li>
+            <form action="{{ url_for("logout_user") }}" method="post">
+                <input type="submit" value="logout">
+            </form>
+        </li>
+      {% endif %}
+    </ul>
 </nav>
+
+{# if statement vid 206,10:30 #}
