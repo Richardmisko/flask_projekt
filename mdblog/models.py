@@ -9,3 +9,7 @@ class Article(db.Model):
 
 # 301, 3:20
 
+class User(db.Model):
+	id = db.Column(db.Integer, primary_key = True) 
+	username = db.Column(db.String, unique = True)
+	password = db.Column(db.String)
